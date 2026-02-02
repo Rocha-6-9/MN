@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { 
   CheckCircle2, 
@@ -30,7 +29,9 @@ const Navbar: React.FC = () => (
         />
       </div>
       <a 
-        href="#form" 
+        href="https://wa.me/message/7WGJ5XAWPLASA1" 
+        target="_blank"
+        rel="noopener noreferrer"
         className="hidden md:block bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-full font-semibold text-sm transition-all transform hover:scale-105 active:scale-95 shadow-lg shadow-blue-200"
       >
         Falar com Especialista
@@ -59,7 +60,12 @@ const Hero: React.FC = () => (
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-          <a href="#form" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-xl shadow-orange-900/20 transform hover:-translate-y-1 flex items-center justify-center gap-2">
+          <a 
+            href="https://wa.me/message/7WGJ5XAWPLASA1" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-xl shadow-orange-900/20 transform hover:-translate-y-1 flex items-center justify-center gap-2"
+          >
             Solicitar Avaliação Gratuita
           </a>
         </div>
@@ -311,17 +317,6 @@ const FAQ: React.FC = () => {
 };
 
 const FormSection: React.FC = () => {
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success'>('idle');
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus('loading');
-    // Simulate API call
-    setTimeout(() => {
-      setStatus('success');
-    }, 1500);
-  };
-
   return (
     <section id="form" className="py-24 bg-blue-900 relative overflow-hidden">
       <div className="absolute inset-0 opacity-10 pointer-events-none">
@@ -359,74 +354,25 @@ const FormSection: React.FC = () => {
             </div>
           </div>
 
-          <div className="lg:col-span-3 p-8 md:p-12">
-            {status === 'success' ? (
-              <div className="h-full flex flex-col items-center justify-center text-center space-y-4 animate-in fade-in zoom-in">
-                <div className="bg-green-100 p-6 rounded-full">
-                  <CheckCircle2 className="w-16 h-16 text-green-600" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900">Solicitação Enviada!</h3>
-                <p className="text-gray-500">Obrigado pelo interesse. Um especialista em BPO Financeiro ligará para você em breve.</p>
-                <button onClick={() => setStatus('idle')} className="text-blue-600 font-bold hover:underline">Voltar</button>
+          <div className="lg:col-span-3 p-8 md:p-12 flex flex-col justify-center">
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <h3 className="text-2xl font-bold text-gray-900">Pronto para organizar suas finanças?</h3>
+                <p className="text-gray-600 leading-relaxed">Clique no botão abaixo para falar agora mesmo com um de nossos especialistas via WhatsApp e solicitar sua avaliação gratuita.</p>
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="space-y-2">
-                  <label className="text-sm font-bold text-gray-700">Nome completo *</label>
-                  <input 
-                    required 
-                    type="text" 
-                    placeholder="Seu nome" 
-                    className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all placeholder:text-gray-400" 
-                  />
-                </div>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold text-gray-700">E-mail corporativo *</label>
-                    <input 
-                      required 
-                      type="email" 
-                      placeholder="seu@email.com" 
-                      className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all" 
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold text-gray-700">Telefone / WhatsApp *</label>
-                    <input 
-                      required 
-                      type="tel" 
-                      placeholder="(00) 00000-0000" 
-                      className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all" 
-                    />
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-bold text-gray-700">Nome da empresa *</label>
-                  <input 
-                    required 
-                    type="text" 
-                    placeholder="Sua empresa" 
-                    className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all" 
-                  />
-                </div>
-                
-                <button 
-                  disabled={status === 'loading'}
-                  type="submit" 
-                  className="w-full bg-orange-500 hover:bg-orange-600 disabled:bg-orange-300 text-white font-extrabold text-lg py-5 rounded-xl transition-all shadow-xl shadow-orange-500/20 active:scale-95 flex items-center justify-center gap-2"
-                >
-                  {status === 'loading' ? (
-                    <>
-                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                      <span>Enviando...</span>
-                    </>
-                  ) : (
-                    "Solicitar Avaliação Gratuita"
-                  )}
-                </button>
-                <p className="text-center text-xs text-gray-400">Ao enviar, você concorda com nossa política de privacidade.</p>
-              </form>
-            )}
+              
+              <a 
+                href="https://wa.me/message/7WGJ5XAWPLASA1" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full bg-orange-500 hover:bg-orange-600 text-white font-extrabold text-xl py-6 rounded-2xl transition-all shadow-xl shadow-orange-500/20 active:scale-95 flex items-center justify-center gap-3 text-center transform hover:-translate-y-1"
+              >
+                Solicitar Avaliação Gratuita
+                <MessageSquare className="w-6 h-6" />
+              </a>
+              
+              <p className="text-center text-xs text-gray-400 italic">Atendimento rápido e personalizado para a realidade do seu negócio.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -447,7 +393,14 @@ const Footer: React.FC = () => (
       <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm font-medium">
         <a href="#" className="hover:text-white transition-colors">Política de Privacidade</a>
         <a href="#" className="hover:text-white transition-colors">Termos de Uso</a>
-        <a href="#form" className="hover:text-white transition-colors">Contato</a>
+        <a 
+          href="https://wa.me/message/7WGJ5XAWPLASA1" 
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-white transition-colors"
+        >
+          Contato
+        </a>
       </div>
       <p className="text-xs">
         © {new Date().getFullYear()} MN Soluções Empresariais. Todos os direitos reservados. <br className="md:hidden" />
