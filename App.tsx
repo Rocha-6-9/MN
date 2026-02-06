@@ -29,7 +29,7 @@ const Navbar: React.FC = () => (
         />
       </div>
       <a 
-        href="https://wa.me/message/7WGJ5XAWPLASA1" 
+        href="https://wa.link/gi2e8l" 
         target="_blank"
         rel="noopener noreferrer"
         className="hidden md:block bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-full font-semibold text-sm transition-all transform hover:scale-105 active:scale-95 shadow-lg shadow-blue-200"
@@ -61,7 +61,7 @@ const Hero: React.FC = () => (
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
           <a 
-            href="https://wa.me/message/7WGJ5XAWPLASA1" 
+            href="https://wa.link/gi2e8l" 
             target="_blank"
             rel="noopener noreferrer"
             className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-xl shadow-orange-900/20 transform hover:-translate-y-1 flex items-center justify-center gap-2"
@@ -362,7 +362,7 @@ const FormSection: React.FC = () => {
               </div>
               
               <a 
-                href="https://wa.me/message/7WGJ5XAWPLASA1" 
+                href="https://wa.link/gi2e8l" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full bg-orange-500 hover:bg-orange-600 text-white font-extrabold text-xl py-6 rounded-2xl transition-all shadow-xl shadow-orange-500/20 active:scale-95 flex items-center justify-center gap-3 text-center transform hover:-translate-y-1"
@@ -394,7 +394,7 @@ const Footer: React.FC = () => (
         <a href="#" className="hover:text-white transition-colors">Política de Privacidade</a>
         <a href="#" className="hover:text-white transition-colors">Termos de Uso</a>
         <a 
-          href="https://wa.me/message/7WGJ5XAWPLASA1" 
+          href="https://wa.link/gi2e8l" 
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-white transition-colors"
